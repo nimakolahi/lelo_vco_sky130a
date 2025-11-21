@@ -10,12 +10,11 @@ n.mahmoudi
 
 # Why
 
-<explain why you made this module>
+The main target is to design a VCO cell to be used to measure internal voltages inside a SoC.
 
 # How
 
-<explain short how you made this module>
-
+The VCO core is a current-starving VCO design extracted from the papers in the state-of-the-art.
 
 # What
 

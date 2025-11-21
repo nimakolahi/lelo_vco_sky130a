@@ -1,20 +1,13 @@
 library: LELO_VCO_SKY130A
 cell: LELO_VCO
-# Your name
-author: Anonymous
-# Your github username
+author: nimakolahi
 github: nimakolahi
-# Something funny and descriptive
-tagline: The answer is 42
-# Your email, if you so wish
+tagline: Implement a basic VCO architecture.
 email: nimakolahi@gmail.com
-# Your github site, usually <github username>.github.io
 url: nimakolahi.github.io
 doc:
-  # Make docs
-  #libraries:
-  #   <library>:
-  #       - <cell>
-  #       - <cell>
+  libraries:
+     LELO_VCO_SKY130A:
+         - VCO
 sim:
-  # <simdir>: command
+   LELO_VCO: make typical
