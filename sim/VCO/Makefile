@@ -40,6 +40,13 @@ ntc: netlist
 temp: netlist
 	cicsim run --name ${VIEW}_temp ${TB} ${OPT} ${VIEW} Gt "Ktt" "Tt,Th,Tl" Vt
 
+## Vin sweep -> fout tuning curve (standalone ngspice, typical corner).
+## Uses the committed netlist in ../../work/xsch; run `make netlist` first
+## if the schematic changed.
+sweep:
+	ngspice -b sweep.spi 2>/dev/null | awk '/^RESULT/ && NF==3 {print $$2, $$3}' > vco_tuning.dat
+	python3 plot_tuning.py
+
 summary:
 	cicsim summary --output "README.md"
 

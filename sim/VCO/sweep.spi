@@ -1,0 +1,61 @@
+*LELO_VCO tuning-curve testbench (Vin sweep -> fout)
+*----------------------------------------------------------------
+* Sweeps the control voltage Vin and, at each point, runs a transient
+* and measures the oscillation frequency from Vout's rising edges.
+* Produces vco_tuning.dat (columns: Vin[V]  fout[Hz]).
+* Run with:  ngspice -b sweep.spi     (see Makefile target `make sweep`)
+*----------------------------------------------------------------
+
+*----------------------------------------------------------------
+* Include DUT netlist
+*----------------------------------------------------------------
+.include ../../work/xsch/LELO_VCO.spice
+
+*----------------------------------------------------------------
+* Models (typical corner, room temperature)
+*----------------------------------------------------------------
+.lib "$PDK_ROOT/sky130A/libs.tech/ngspice/sky130.lib.spice" tt
+.temp 27
+.option TNOM=27 GMIN=1e-15 reltol=1e-3
+
+.param AVDD=1.8
+
+*----------------------------------------------------------------
+* Force
+*----------------------------------------------------------------
+VSS VSS 0        dc 0
+VDD VDD_1V8 VSS  pwl 0 0 10n {AVDD}
+VIN Vin VSS      dc 0.9
+
+*----------------------------------------------------------------
+* DUT
+*----------------------------------------------------------------
+XDUT VDD_1V8 VSS Vin Vout LELO_VCO
+
+*----------------------------------------------------------------
+* NGSPICE control: Vin sweep
+*----------------------------------------------------------------
+.control
+  set num_threads=8
+  unset askquit
+
+  * Vin from 0.30 V to 1.80 V in 0.10 V steps.
+  * For each point: run a transient, then measure the oscillation
+  * frequency over 5 periods (skipping the first cycles for startup).
+  * Emits one "RESULT <Vin> <fout_Hz>" line per point; the Makefile
+  * captures these into vco_tuning.dat.  Points that do not oscillate
+  * simply produce no frequency and are dropped downstream.
+  foreach vv 0.30 0.40 0.50 0.60 0.70 0.80 0.90 1.00 1.10 1.20 1.30 1.40 1.50 1.60 1.70 1.80
+    alter @VIN[dc] = $vv
+    tran 20p 3u
+    let t1 = 0
+    let t2 = 0
+    meas tran t1 WHEN v(Vout)=0.9 RISE=3
+    meas tran t2 WHEN v(Vout)=0.9 RISE=8
+    let fosc = 5/(t2-t1)
+    echo "RESULT $vv" $&fosc
+  end
+  quit
+.endc
+
+.end
