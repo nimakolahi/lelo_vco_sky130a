@@ -16,3 +16,8 @@ work/lvs
 work/gds
 work/drc
 work/xsch
+
+# AI assistant / agent artifacts
+CLAUDE.md
+CLAUDE.local.md
+.claude/
