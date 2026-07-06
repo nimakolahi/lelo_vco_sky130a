@@ -7,7 +7,7 @@ all: typical etc mc summary
 TB=tran
 VIEW=Sch
 #VIEW=Lay
-CELL=VCO
+CELL=LELO_VCO
 LIB =LELO_VCO_SKY130A
 OPT=
 

@@ -4,6 +4,9 @@
 load {cicname}.raw
 
 echo "MEAS_START"
-
+meas tran t1 WHEN v(Vout)=0.9 RISE=5
+meas tran t2 WHEN v(Vout)=0.9 RISE=15
+let fosc = 10/(t2-t1)
+print fosc
 echo "MEAS_END"
 .endc

@@ -6,4 +6,4 @@ corner:
   Sch: ''
 ngspice:
   library: LELO_VCO_SKY130A
-  cell: VCO
+  cell: LELO_VCO

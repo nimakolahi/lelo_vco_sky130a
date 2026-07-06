@@ -3,9 +3,9 @@
 * Include
 *----------------------------------------------------------------
 #ifdef Lay
-.include ../../../work/lpe/VCO_lpe.spi
+.include ../../../work/lpe/LELO_VCO_lpe.spi
 #else
-.include ../../../work/xsch/VCO.spice
+.include ../../../work/xsch/LELO_VCO.spice
 #endif
 
 *-----------------------------------------------------------------
@@ -25,6 +25,7 @@
 *-----------------------------------------------------------------
 VSS  VSS  0     dc 0
 VDD  VDD_1V8  VSS  pwl 0 0 10n {AVDD}
+VIN  Vin      VSS  dc 0.9
 
 *-----------------------------------------------------------------
 * DUT
@@ -49,7 +50,7 @@ unset askquit
 optran 0 0 0 1n 1u 0
 
 
-tran 1n 10n 1p
+tran 20p 2u
 write
 quit
 
