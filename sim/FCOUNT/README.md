@@ -76,7 +76,7 @@ curve of the sensor (`make sweep`, via [`sweep_count.py`](sweep_count.py)):
   Vin = 0.9 V → 581 counts matches 36.3 MHz × 16 µs, and 1.8 V → 1080 matches
   67.5 MHz × 16 µs.
 - Resolution is 1 LSB = 1 count = 1/T_gate = **62.5 kHz**. Widen `T_gate` for
-  finer resolution (12-bit counter allows up to 4095 counts before overflow).
+  finer resolution (11-bit counter allows up to 2047 counts before overflow).
 
 ## Generated (git-ignored) artifacts
 

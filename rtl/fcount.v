@@ -11,7 +11,7 @@
 // so `result` is a digital code proportional to f_out, and hence to the
 // VCO control voltage Vin - the read-out for the VCO-based voltage sensor.
 //----------------------------------------------------------------------
-module fcount #(parameter W = 12) (
+module fcount #(parameter W = 11) (
     input  wire          clk,     // measured clock (VCO output)
     input  wire          gate,    // measurement window: count while high
     output logic [W-1:0] count,   // live running count
