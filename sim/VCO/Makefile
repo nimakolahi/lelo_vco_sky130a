@@ -47,6 +47,10 @@ sweep:
 	ngspice -b sweep.spi 2>/dev/null | awk '/^RESULT/ && NF==3 {print $$2, $$3}' > vco_tuning.dat
 	python3 plot_tuning.py
 
+## Tuning curve across PVT corners (fast/typ/slow envelope)
+sweep_corners:
+	python3 sweep_corners.py
+
 summary:
 	cicsim summary --output "README.md"
 
