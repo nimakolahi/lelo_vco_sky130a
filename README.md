@@ -52,3 +52,12 @@ The VCO core is a current-starving VCO design extracted from the papers in the s
 | Technology          |         | Skywater 130 nm |         |       |
 | AVDD                | 1.7    | 1.8           | 1.9    | V     |
 | Temperature         | -40     | 27            | 125     | C     |
+
+
+# Characterization
+
+Tuning curve (output frequency vs. control voltage). Typical K_VCO ≈ 75 MHz/V,
+usable range ≈ 0.5–1.3 V, ~6 → 67 MHz. Details and PVT-corner spread in
+[sim/VCO/TUNING.md](sim/VCO/TUNING.md).
+
+![VCO tuning curve](sim/VCO/vco_tuning_curve.png)
