@@ -2,7 +2,7 @@ name: LVS
 
 on:
   push:
-    branches: ["main"]
+    branches: ["master"]
     paths:
       - 'design/**.mag'
       - 'design/**.sch'
