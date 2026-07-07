@@ -61,3 +61,15 @@ usable range ≈ 0.5–1.3 V, ~6 → 67 MHz. Details and PVT-corner spread in
 [sim/VCO/TUNING.md](sim/VCO/TUNING.md).
 
 ![VCO tuning curve](sim/VCO/vco_tuning_curve.png)
+
+
+# Read-out (frequency counter)
+
+A synthesizable Verilog counter ([rtl/fcount.v](rtl/fcount.v)) counts VCO
+cycles over a gate window to produce a digital code proportional to `f_out`
+(hence to `Vin`) — the sensor read-out. The RTL is **co-simulated with the
+analog VCO** in ngspice (mixed-signal `d_cosim`); see
+[sim/FCOUNT/README.md](sim/FCOUNT/README.md). At Vin = 0.9 V it reads 73 counts
+over a 2 µs window → 36.5 MHz.
+
+![frequency counter demo](sim/FCOUNT/fcount_demo.png)

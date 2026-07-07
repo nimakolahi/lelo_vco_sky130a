@@ -21,3 +21,8 @@ work/xsch
 CLAUDE.md
 CLAUDE.local.md
 .claude/
+
+# Mixed-signal (vlnggen/d_cosim) generated artifacts
+svinst.spi
+*_obj_dir/
+fcount_wave.dat
