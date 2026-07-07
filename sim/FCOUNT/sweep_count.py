@@ -17,7 +17,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-TGATE = 2e-6
+TGATE = 16e-6
 VIN_STEPS = [round(0.3 + 0.1 * i, 2) for i in range(16)]  # 0.30 .. 1.80
 
 DECK = """*VCO + fcount transfer sweep
@@ -28,7 +28,7 @@ DECK = """*VCO + fcount transfer sweep
 .param AVDD=1.8
 .param VIN={vin}
 .param TSTART=0.5u
-.param TGATE=2u
+.param TGATE=16u
 
 VSS  VSS 0        dc 0
 VDD  VDD_1V8 VSS  pwl 0 0 10n {{AVDD}}
@@ -46,7 +46,7 @@ VLINK clk Vout dc 0
      + ( ".model auto_dac dac_bridge(out_low = 0.0 out_high = 1.8)"
      +   "auto_bridge%d [ %s ] [ %s ] auto_dac" )
   optran 0 0 0 1n 1u 0
-  tran 20p 3u
+  tran 20p 17u
   let idx = length(v(dec_result)) - 1
   let ncount = v(dec_result)[idx]*1000
   echo "RESULT {vin}" $&ncount

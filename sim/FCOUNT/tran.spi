@@ -13,7 +13,7 @@
 .param AVDD=1.8
 .param VIN=0.9
 .param TSTART=0.5u
-.param TGATE=2u
+.param TGATE=16u
 
 *----------------------------------------------------------------
 * Force
@@ -50,7 +50,7 @@ VLINK clk Vout dc 0
      +   "auto_bridge%d [ %s ] [ %s ] auto_dac" )
 
   optran 0 0 0 1n 1u 0
-  tran 20p 3u
+  tran 20p 17u
 
   let idx = length(v(dec_result)) - 1
   let ncount = v(dec_result)[idx]*1000

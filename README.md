@@ -69,7 +69,7 @@ A synthesizable Verilog counter ([rtl/fcount.v](rtl/fcount.v)) counts VCO
 cycles over a gate window to produce a digital code proportional to `f_out`
 (hence to `Vin`) — the sensor read-out. The RTL is **co-simulated with the
 analog VCO** in ngspice (mixed-signal `d_cosim`); see
-[sim/FCOUNT/README.md](sim/FCOUNT/README.md). At Vin = 0.9 V it reads 73 counts
-over a 2 µs window → 36.5 MHz.
+[sim/FCOUNT/README.md](sim/FCOUNT/README.md). At Vin = 0.9 V it reads 581 counts
+over a 16 µs window → 36.3 MHz.
 
 ![frequency counter demo](sim/FCOUNT/fcount_demo.png)

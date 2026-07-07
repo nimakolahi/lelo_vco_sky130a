@@ -45,12 +45,13 @@ with the VCO, and (4) writes `fcount_demo.png`.
 
 ## Result (typical, 27 °C, VDD = 1.8 V, Vin = 0.9 V)
 
-- Gate window `T_gate = 2 µs`.
-- Measured **result = 73 counts** → f_out ≈ 73 / 2 µs = **36.5 MHz**, matching
-  the analog transient/tuning-curve value (~36.3 MHz) within ±1 count.
+- Gate window `T_gate = 16 µs`.
+- Measured **result = 581 counts** → f_out ≈ 581 / 16 µs = **36.3 MHz**,
+  matching the analog transient/tuning-curve value (~36.3 MHz).
 
-The ±1-count quantization sets the resolution; a longer gate (or reciprocal
-counting) trades measurement time for resolution.
+The ±1-count quantization sets the resolution: 1 LSB = 1/T_gate = **62.5 kHz**
+with the 16 µs window. A longer gate (or reciprocal counting) trades
+measurement time for finer resolution.
 
 ## Digital transfer characteristic (code vs Vin)
 
@@ -61,21 +62,21 @@ curve of the sensor (`make sweep`, via [`sweep_count.py`](sweep_count.py)):
 
 | Vin [V] | count | | Vin [V] | count |
 |--------:|------:|-|--------:|------:|
-| 0.40 | 4   | | 1.10 | 104 |
-| 0.50 | 13  | | 1.20 | 118 |
-| 0.60 | 26  | | 1.30 | 130 |
-| 0.70 | 41  | | 1.40 | 134 |
-| 0.80 | 57  | | 1.50–1.80 | 135 |
-| 0.90 | 73  | |      |     |
-| 1.00 | 88  | |      |     |
+| 0.40 | 28  | | 1.10 | 827  |
+| 0.50 | 103 | | 1.20 | 945  |
+| 0.60 | 210 | | 1.30 | 1042 |
+| 0.70 | 330 | | 1.40 | 1072 |
+| 0.80 | 456 | | 1.50–1.80 | ~1080 |
+| 0.90 | 581 | |      |      |
+| 1.00 | 705 | |      |      |
 
-- **Sensitivity ≈ 150 counts/V** in the linear region (= K_VCO 75 MHz/V ×
-  2 µs gate), saturating at 135 counts.
+- **Sensitivity ≈ 1200 counts/V** in the linear region (= K_VCO 75 MHz/V ×
+  16 µs gate), saturating at ~1080 counts.
 - The code is exactly `f_out × T_gate`, so this is the digitized tuning curve —
-  Vin = 0.9 V → 73 counts matches 36.3 MHz × 2 µs, and 1.8 V → 135 matches
-  67.3 MHz × 2 µs.
-- Resolution is 1 LSB = 1 count = 1/T_gate = 0.5 MHz. Widen `T_gate` for finer
-  resolution (12-bit counter allows up to 4095 counts before overflow).
+  Vin = 0.9 V → 581 counts matches 36.3 MHz × 16 µs, and 1.8 V → 1080 matches
+  67.5 MHz × 16 µs.
+- Resolution is 1 LSB = 1 count = 1/T_gate = **62.5 kHz**. Widen `T_gate` for
+  finer resolution (12-bit counter allows up to 4095 counts before overflow).
 
 ## Generated (git-ignored) artifacts
 

@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 HERE = os.path.dirname(os.path.abspath(__file__))
 DAT = os.path.join(HERE, "fcount_wave.dat")
 PNG = os.path.join(HERE, "fcount_demo.png")
-TGATE = 2e-6  # gate window [s] (matches tran.spi)
+TGATE = 16e-6  # gate window [s] (matches tran.spi)
 
 d = np.loadtxt(DAT)
 t = d[:, 0] * 1e6            # us
