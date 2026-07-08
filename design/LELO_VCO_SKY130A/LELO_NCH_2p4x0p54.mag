@@ -1,0 +1,99 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1783522697
+<< checkpaint >>
+rect -1510 -1710 1510 1710
+<< pwell >>
+rect -250 -450 250 450
+<< nmos >>
+rect -54 -240 54 240
+<< ndiff >>
+rect -112 228 -54 240
+rect -112 -228 -100 228
+rect -66 -228 -54 228
+rect -112 -240 -54 -228
+rect 54 228 112 240
+rect 54 -228 66 228
+rect 100 -228 112 228
+rect 54 -240 112 -228
+<< ndiffc >>
+rect -100 -228 -66 228
+rect 66 -228 100 228
+<< psubdiff >>
+rect -214 380 -118 414
+rect 118 380 214 414
+rect -214 318 -180 380
+rect 180 318 214 380
+rect -214 -380 -180 -318
+rect 180 -380 214 -318
+rect -214 -414 -118 -380
+rect 118 -414 214 -380
+<< psubdiffcont >>
+rect -118 380 118 414
+rect -214 -318 -180 318
+rect 180 -318 214 318
+rect -118 -414 118 -380
+<< poly >>
+rect -54 312 54 328
+rect -54 278 -38 312
+rect 38 278 54 312
+rect -54 240 54 278
+rect -54 -278 54 -240
+rect -54 -312 -38 -278
+rect 38 -312 54 -278
+rect -54 -328 54 -312
+<< polycont >>
+rect -38 278 38 312
+rect -38 -312 38 -278
+<< locali >>
+rect -214 380 -118 414
+rect 118 380 214 414
+rect -214 318 -180 380
+rect 180 318 214 380
+rect -54 278 -38 312
+rect 38 278 54 312
+rect -100 228 -66 244
+rect -100 -244 -66 -228
+rect 66 228 100 244
+rect 66 -244 100 -228
+rect -54 -312 -38 -278
+rect 38 -312 54 -278
+rect -214 -380 -180 -318
+rect 180 -380 214 -318
+rect -214 -414 -118 -380
+rect 118 -414 214 -380
+<< viali >>
+rect -38 278 38 312
+rect -100 -228 -66 228
+rect 66 -228 100 228
+rect -38 -312 38 -278
+<< metal1 >>
+rect -50 312 50 318
+rect -50 278 -38 312
+rect 38 278 50 312
+rect -50 272 50 278
+rect -106 228 -60 240
+rect -106 -228 -100 228
+rect -66 -228 -60 228
+rect -106 -240 -60 -228
+rect 60 228 106 240
+rect 60 -228 66 228
+rect 100 -228 106 228
+rect 60 -240 106 -228
+rect -50 -278 50 -272
+rect -50 -312 -38 -278
+rect 38 -312 50 -278
+rect -50 -318 50 -312
+<< labels >>
+rlabel psubdiffcont 0 -397 0 -397 0 B
+port 1 nsew
+rlabel ndiffc -83 0 -83 0 0 D
+port 2 nsew
+rlabel ndiffc 83 0 83 0 0 S
+port 3 nsew
+rlabel polycont 0 295 0 295 0 G
+port 4 nsew
+<< properties >>
+string FIXED_BBOX -197 -397 197 397
+<< end >>

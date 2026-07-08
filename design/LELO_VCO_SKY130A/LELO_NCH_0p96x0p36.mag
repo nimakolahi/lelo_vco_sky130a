@@ -1,0 +1,99 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1783522697
+<< checkpaint >>
+rect -1492 -1566 1492 1566
+<< pwell >>
+rect -232 -306 232 306
+<< nmos >>
+rect -36 -96 36 96
+<< ndiff >>
+rect -94 84 -36 96
+rect -94 -84 -82 84
+rect -48 -84 -36 84
+rect -94 -96 -36 -84
+rect 36 84 94 96
+rect 36 -84 48 84
+rect 82 -84 94 84
+rect 36 -96 94 -84
+<< ndiffc >>
+rect -82 -84 -48 84
+rect 48 -84 82 84
+<< psubdiff >>
+rect -196 236 -100 270
+rect 100 236 196 270
+rect -196 174 -162 236
+rect 162 174 196 236
+rect -196 -236 -162 -174
+rect 162 -236 196 -174
+rect -196 -270 -100 -236
+rect 100 -270 196 -236
+<< psubdiffcont >>
+rect -100 236 100 270
+rect -196 -174 -162 174
+rect 162 -174 196 174
+rect -100 -270 100 -236
+<< poly >>
+rect -36 168 36 184
+rect -36 134 -20 168
+rect 20 134 36 168
+rect -36 96 36 134
+rect -36 -134 36 -96
+rect -36 -168 -20 -134
+rect 20 -168 36 -134
+rect -36 -184 36 -168
+<< polycont >>
+rect -20 134 20 168
+rect -20 -168 20 -134
+<< locali >>
+rect -196 236 -100 270
+rect 100 236 196 270
+rect -196 174 -162 236
+rect 162 174 196 236
+rect -36 134 -20 168
+rect 20 134 36 168
+rect -82 84 -48 100
+rect -82 -100 -48 -84
+rect 48 84 82 100
+rect 48 -100 82 -84
+rect -36 -168 -20 -134
+rect 20 -168 36 -134
+rect -196 -236 -162 -174
+rect 162 -236 196 -174
+rect -196 -270 -100 -236
+rect 100 -270 196 -236
+<< viali >>
+rect -20 134 20 168
+rect -82 -84 -48 84
+rect 48 -84 82 84
+rect -20 -168 20 -134
+<< metal1 >>
+rect -32 168 32 174
+rect -32 134 -20 168
+rect 20 134 32 168
+rect -32 128 32 134
+rect -88 84 -42 96
+rect -88 -84 -82 84
+rect -48 -84 -42 84
+rect -88 -96 -42 -84
+rect 42 84 88 96
+rect 42 -84 48 84
+rect 82 -84 88 84
+rect 42 -96 88 -84
+rect -32 -134 32 -128
+rect -32 -168 -20 -134
+rect 20 -168 32 -134
+rect -32 -174 32 -168
+<< labels >>
+rlabel psubdiffcont 0 -253 0 -253 0 B
+port 1 nsew
+rlabel ndiffc -65 0 -65 0 0 D
+port 2 nsew
+rlabel ndiffc 65 0 65 0 0 S
+port 3 nsew
+rlabel polycont 0 151 0 151 0 G
+port 4 nsew
+<< properties >>
+string FIXED_BBOX -179 -253 179 253
+<< end >>
