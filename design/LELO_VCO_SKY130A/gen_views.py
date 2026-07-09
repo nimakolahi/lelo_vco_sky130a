@@ -52,8 +52,8 @@ PCH_SCH = PCH_SCH.replace(
 # ---- symbol views (generic, use @symname) ----
 NCH_SYM = """v {xschem version=3.0.0 file_version=1.2 }
 K {type=subcircuit
-format="@name @pinlist @symname "
-template="name=x1 "
+format="@spiceprefix@name @pinlist @symname "
+template="name=x1 spiceprefix=X"
 }
 L 4 30 10 40 15 {}
 L 4 40 15 30 20 {}
@@ -75,8 +75,8 @@ B 5 36 4 44 -4 {name=B dir=inout pinnumber=4}
 
 PCH_SYM = """v {xschem version=3.0.0 file_version=1.2 }
 K {type=subcircuit
-format="@name @pinlist @symname "
-template="name=x1 "
+format="@spiceprefix@name @pinlist @symname "
+template="name=x1 spiceprefix=X"
 }
 L 4 20 15 40 15 {}
 L 4 40 15 40 30 {}

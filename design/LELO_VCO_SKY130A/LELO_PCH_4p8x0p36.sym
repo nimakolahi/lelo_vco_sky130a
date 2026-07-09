@@ -1,7 +1,7 @@
 v {xschem version=3.0.0 file_version=1.2 }
 K {type=subcircuit
-format="@name @pinlist @symname "
-template="name=x1 "
+format="@spiceprefix@name @pinlist @symname "
+template="name=x1 spiceprefix=X"
 }
 L 4 20 15 40 15 {}
 L 4 40 15 40 30 {}
