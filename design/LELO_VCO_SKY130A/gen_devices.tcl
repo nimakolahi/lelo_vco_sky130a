@@ -16,7 +16,7 @@ proc gen {name kind w l nf} {
 gen LELO_NCH_2p4x0p54  nfet_01v8 2.4  0.54 1
 gen LELO_NCH_0p96x0p36 nfet_01v8 0.96 0.36 1
 gen LELO_NCH_1p2x0p18  nfet_01v8 1.2  0.18 1
-gen LELO_NCH_96x0p9    nfet_01v8 96   0.9  16
+gen LELO_NCH_96x0p9    nfet_01v8 96   0.9  1
 # PCH
 gen LELO_PCH_4p8x0p54  pfet_01v8 4.8  0.54 1
 gen LELO_PCH_4p8x0p36  pfet_01v8 4.8  0.36 1
