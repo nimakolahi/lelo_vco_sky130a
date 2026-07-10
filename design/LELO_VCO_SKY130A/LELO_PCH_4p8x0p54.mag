@@ -1,11 +1,11 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1783522697
+timestamp 1783688885
 << checkpaint >>
-rect -1510 -1959 1510 1959
+rect -1408 -1840 1408 1840
 << nwell >>
-rect -250 -699 250 699
+rect -148 -580 148 580
 << pmos >>
 rect -54 -480 54 480
 << pdiff >>
@@ -20,20 +20,6 @@ rect 54 -480 112 -468
 << pdiffc >>
 rect -100 -468 -66 468
 rect 66 -468 100 468
-<< nsubdiff >>
-rect -214 629 -118 663
-rect 118 629 214 663
-rect -214 567 -180 629
-rect 180 567 214 629
-rect -214 -629 -180 -567
-rect 180 -629 214 -567
-rect -214 -663 -118 -629
-rect 118 -663 214 -629
-<< nsubdiffcont >>
-rect -118 629 118 663
-rect -214 -567 -180 567
-rect 180 -567 214 567
-rect -118 -663 118 -629
 << poly >>
 rect -54 561 54 577
 rect -54 527 -38 561
@@ -47,10 +33,6 @@ rect -54 -577 54 -561
 rect -38 527 38 561
 rect -38 -561 38 -527
 << locali >>
-rect -214 629 -118 663
-rect 118 629 214 663
-rect -214 567 -180 629
-rect 180 567 214 629
 rect -54 527 -38 561
 rect 38 527 54 561
 rect -100 468 -66 484
@@ -59,10 +41,6 @@ rect 66 468 100 484
 rect 66 -484 100 -468
 rect -54 -561 -38 -527
 rect 38 -561 54 -527
-rect -214 -629 -180 -567
-rect 180 -629 214 -567
-rect -214 -663 -118 -629
-rect 118 -663 214 -629
 << viali >>
 rect -38 527 38 561
 rect -100 -468 -66 468
@@ -86,14 +64,10 @@ rect -50 -561 -38 -527
 rect 38 -561 50 -527
 rect -50 -567 50 -561
 << labels >>
-rlabel nsubdiffcont 0 -646 0 -646 0 B
-port 1 nsew
 rlabel pdiffc -83 0 -83 0 0 D
-port 2 nsew
+port 1 nsew
 rlabel pdiffc 83 0 83 0 0 S
-port 3 nsew
+port 2 nsew
 rlabel polycont 0 544 0 544 0 G
-port 4 nsew
-<< properties >>
-string FIXED_BBOX -197 -646 197 646
+port 3 nsew
 << end >>

@@ -5,6 +5,7 @@ proc gen {name kind w l nf} {
     dict set p w $w
     dict set p l $l
     dict set p nf $nf
+    dict set p guard 0
     sky130::sky130_fd_pr__${kind}_draw $p
     save ../design/LELO_VCO_SKY130A/$name.mag
     drc check
