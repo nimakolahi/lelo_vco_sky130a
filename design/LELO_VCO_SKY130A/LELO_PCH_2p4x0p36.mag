@@ -1,7 +1,7 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1783688885
+timestamp 1783691737
 << checkpaint >>
 rect -1390 -1600 1390 1600
 << nwell >>
@@ -70,4 +70,6 @@ rlabel pdiffc 65 0 65 0 0 S
 port 2 nsew
 rlabel polycont 0 304 0 304 0 G
 port 3 nsew
+<< properties >>
+string FIXED_BBOX -130 -340 130 340
 << end >>

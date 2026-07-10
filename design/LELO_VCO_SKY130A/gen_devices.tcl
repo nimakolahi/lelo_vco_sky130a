@@ -11,6 +11,11 @@ proc gen {name kind w l nf} {
     drc check
     drc catchup
     puts "DRCRESULT $name [drc count total]"
+    # FIXED_BBOX so cicpy can size the cell for placement (else garbage transforms)
+    select top cell
+    set b [box values]
+    property FIXED_BBOX "[lindex $b 0] [lindex $b 1] [lindex $b 2] [lindex $b 3]"
+    save ../design/LELO_VCO_SKY130A/$name.mag
 }
 
 # NCH
