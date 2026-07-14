@@ -64,12 +64,9 @@ rect -50 -561 -38 -527
 rect 38 -561 50 -527
 rect -50 -567 50 -561
 << labels >>
-rlabel pdiffc -83 0 -83 0 0 D
-port 1 nsew
-rlabel pdiffc 83 0 83 0 0 S
-port 2 nsew
-rlabel polycont 0 544 0 544 0 G
-port 3 nsew
+flabel locali s -100 468 -66 484 0 FreeSans 400 0 0 0 D
+flabel locali s 66 468 100 484 0 FreeSans 400 0 0 0 S
+flabel locali s -54 527 -38 561 0 FreeSans 400 0 0 0 G
 << properties >>
 string FIXED_BBOX -148 -580 148 580
 << end >>

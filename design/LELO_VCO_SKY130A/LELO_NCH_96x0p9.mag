@@ -405,6 +405,9 @@ rlabel ndiffc 952 0 952 0 0 S9
 port 11 nsew
 rlabel polycont 1071 1015 1071 1015 0 G
 port 2 nsew
+flabel locali s -1190 -1032 -1145 -998 0 FreeSans 400 0 0 0 D
+flabel locali s -997 -1032 -907 -998 0 FreeSans 400 0 0 0 S
+flabel metal1 s -1157 1032 -985 1038 0 FreeSans 400 0 0 0 G
 << properties >>
 string FIXED_BBOX -1219 -1048 1219 1048
 string gencell sky130_fd_pr__nfet_01v8
