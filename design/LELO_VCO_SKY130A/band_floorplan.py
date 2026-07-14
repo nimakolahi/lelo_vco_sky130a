@@ -66,6 +66,15 @@ for s in slots:
     slot_x[s]=x; x+=slotw[s]+GX
     if s=="R1": x+=200   # extra clearance R1 -> PMOS band (nwell to res/ndiff)
 
+# grouped placement name -> real paper instance name (M0..M27); resistors keep x1/x2
+M={"a0":"M26","a1":"M27","a2":"M24","a3":"M25",
+   "b0":"M10","b1":"M0","b2":"M5","b3":"M15",
+   "c0":"M11","c1":"M1","c2":"M6","c3":"M16",
+   "d0":"M12","d1":"M2","d2":"M7","d3":"M17",
+   "e0":"M13","e1":"M3","e2":"M8","e3":"M18",
+   "f0":"M14","f1":"M4","f2":"M9","f3":"M19",
+   "g0":"M20","g1":"M21","g2":"M22","g3":"M23","x1":"x1","x2":"x2"}
+
 lines=["load LELO_VCO -force","select top cell","if {[catch {delete}]} {}",
        "addpath ../JNW_TR_SKY130A"]
 pmos=[]
@@ -74,7 +83,7 @@ for name,(s,r,c) in inst.items():
     # center cell in its slot horizontally
     llx += (slotw[s]-w(c))//2
     px=llx-BB[c][0]; py=lly-BB[c][1]     # getcell origin -> cell (0,0)
-    lines+=[f"box {px} {py} {px} {py}",f"getcell {c}",f"identify {name}"]
+    lines+=[f"box {px} {py} {px} {py}",f"getcell {c}",f"identify {M[name]}"]
     if c.startswith("LELO_PCH"):
         pmos.append((llx,lly,llx+w(c),lly+h(c)))
 # shared nwell strip over all PMOS cells
