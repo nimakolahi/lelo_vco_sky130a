@@ -1,114 +1,132 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1783987200
+timestamp 1784025043
 << checkpaint >>
-rect -1157 0 5642 5280
-<< locali >>
-rect 48 2932 82 2948
-rect 48 84 82 100
-rect 4214 108 4248 124
-<< metal1 >>
-rect -1157 1400 -985 1406
-use LELO_NCH_0p96x0p36 Xa0 ../LELO_VCO_SKY130A
-transform 1 0 0 0 1 0
-box 0 0 188 368
-use LELO_NCH_96x0p9 Xa1 ../LELO_VCO_SKY130A
-transform 1 0 0 0 1 1268
-box 0 1268 2438 3364
-use LELO_PCH_4p8x0p36 Xa2 ../LELO_VCO_SKY130A
-transform 1 0 0 0 1 4264
-box 0 4264 260 5424
-use LELO_PCH_2p4x0p36 Xa3 ../LELO_VCO_SKY130A
-transform 1 0 0 0 1 6324
-box 0 6324 260 7004
-use LELO_NCH_0p96x0p36 Xb0 ../LELO_VCO_SKY130A
-transform 1 0 3538 0 1 0
-box 3538 0 3726 368
-use LELO_NCH_2p4x0p54 Xb1 ../LELO_VCO_SKY130A
-transform 1 0 3538 0 1 1268
-box 3538 1268 3762 1924
-use LELO_PCH_4p8x0p54 Xb2 ../LELO_VCO_SKY130A
-transform 1 0 3538 0 1 2824
-box 3538 2824 3834 3984
-use LELO_PCH_4p8x0p36 Xb3 ../LELO_VCO_SKY130A
-transform 1 0 3538 0 1 4884
-box 3538 4884 3798 6044
-use LELO_NCH_0p96x0p36 Xc0 ../LELO_VCO_SKY130A
-transform 1 0 4934 0 1 0
-box 4934 0 5122 368
-use LELO_NCH_2p4x0p54 Xc1 ../LELO_VCO_SKY130A
-transform 1 0 4934 0 1 1268
-box 4934 1268 5158 1924
-use LELO_PCH_4p8x0p54 Xc2 ../LELO_VCO_SKY130A
-transform 1 0 4934 0 1 2824
-box 4934 2824 5230 3984
-use LELO_PCH_4p8x0p36 Xc3 ../LELO_VCO_SKY130A
-transform 1 0 4934 0 1 4884
-box 4934 4884 5194 6044
-use LELO_NCH_0p96x0p36 Xd0 ../LELO_VCO_SKY130A
-transform 1 0 6330 0 1 0
-box 6330 0 6518 368
-use LELO_NCH_2p4x0p54 Xd1 ../LELO_VCO_SKY130A
-transform 1 0 6330 0 1 1268
-box 6330 1268 6554 1924
-use LELO_PCH_4p8x0p54 Xd2 ../LELO_VCO_SKY130A
-transform 1 0 6330 0 1 2824
-box 6330 2824 6626 3984
-use LELO_PCH_4p8x0p36 Xd3 ../LELO_VCO_SKY130A
-transform 1 0 6330 0 1 4884
-box 6330 4884 6590 6044
-use LELO_NCH_0p96x0p36 Xe0 ../LELO_VCO_SKY130A
-transform 1 0 7726 0 1 0
-box 7726 0 7914 368
-use LELO_NCH_2p4x0p54 Xe1 ../LELO_VCO_SKY130A
-transform 1 0 7726 0 1 1268
-box 7726 1268 7950 1924
-use LELO_PCH_4p8x0p54 Xe2 ../LELO_VCO_SKY130A
-transform 1 0 7726 0 1 2824
-box 7726 2824 8022 3984
-use LELO_PCH_4p8x0p36 Xe3 ../LELO_VCO_SKY130A
-transform 1 0 7726 0 1 4884
-box 7726 4884 7986 6044
-use LELO_NCH_0p96x0p36 Xf0 ../LELO_VCO_SKY130A
-transform 1 0 9122 0 1 0
-box 9122 0 9310 368
-use LELO_NCH_2p4x0p54 Xf1 ../LELO_VCO_SKY130A
-transform 1 0 9122 0 1 1268
-box 9122 1268 9346 1924
-use LELO_PCH_4p8x0p54 Xf2 ../LELO_VCO_SKY130A
-transform 1 0 9122 0 1 2824
-box 9122 2824 9418 3984
-use LELO_PCH_4p8x0p36 Xf3 ../LELO_VCO_SKY130A
-transform 1 0 9122 0 1 4884
-box 9122 4884 9382 6044
-use LELO_NCH_1p2x0p18 Xg0 ../LELO_VCO_SKY130A
-transform 1 0 10518 0 1 0
-box 10518 0 10670 416
-use LELO_NCH_1p2x0p18 Xg1 ../LELO_VCO_SKY130A
-transform 1 0 10518 0 1 1316
-box 10518 1316 10670 1732
-use LELO_PCH_4p8x0p18 Xg2 ../LELO_VCO_SKY130A
-transform 1 0 10518 0 1 2632
-box 10518 2632 10742 3792
-use LELO_PCH_4p8x0p18 Xg3 ../LELO_VCO_SKY130A
-transform 1 0 10518 0 1 4692
-box 10518 4692 10742 5852
-use JNWTR_RES2 x1 ../JNW_TR_SKY130A
-transform 1 0 11842 0 1 0
-box 11842 0 12490 2640
-use JNWTR_RES4 x2 ../JNW_TR_SKY130A
-transform 1 0 11842 0 1 3540
-box 11842 3540 12922 6180
-<< labels >>
-flabel locali s 48 2932 82 2948 0 FreeSans 400 0 0 0 VDD_1V8
-port 1 nsew power bidirectional
-flabel locali s 48 84 82 100 0 FreeSans 400 0 0 0 VSS
-port 2 nsew ground bidirectional
-flabel metal1 s -1157 1400 -985 1406 0 FreeSans 400 0 0 0 Vin
-port 3 nsew signal bidirectional
-flabel locali s 4214 108 4248 124 0 FreeSans 400 0 0 0 Vout
-port 4 nsew signal bidirectional
-<< properties >>
-string FIXED_BBOX -1157 0 5642 5280
+rect 5768 9265 15584 9284
+rect 1207 1764 15584 9265
+rect 0 0 2 2
+rect 1207 -624 15536 1764
+<< nwell >>
+rect 7028 3024 14324 8024
+use LELO_NCH_0p96x0p36  a0
+timestamp 1783691737
+transform 1 0 7382 0 1 552
+box -94 -184 94 184
+use LELO_NCH_96x0p9  a1
+timestamp 1783957733
+transform 1 0 3657 0 1 3144
+box -1219 -1048 1219 1048
+use LELO_PCH_4p8x0p36  a2
+timestamp 1783691737
+transform 1 0 7418 0 1 7444
+box -130 -580 130 580
+use LELO_PCH_2p4x0p36  a3
+timestamp 1783691737
+transform 1 0 8238 0 1 6724
+box -130 -340 130 340
+use LELO_NCH_0p96x0p36  b0
+timestamp 1783691737
+transform 1 0 9058 0 1 552
+box -94 -184 94 184
+use LELO_NCH_2p4x0p54  b1
+timestamp 1783691737
+transform 1 0 9076 0 1 2176
+box -112 -328 112 328
+use LELO_PCH_4p8x0p54  b2
+timestamp 1783691737
+transform 1 0 9112 0 1 4764
+box -148 -580 148 580
+use LELO_PCH_4p8x0p36  b3
+timestamp 1783691737
+transform 1 0 9094 0 1 7444
+box -130 -580 130 580
+use LELO_NCH_0p96x0p36  c0
+timestamp 1783691737
+transform 1 0 9950 0 1 552
+box -94 -184 94 184
+use LELO_NCH_2p4x0p54  c1
+timestamp 1783691737
+transform 1 0 9968 0 1 2176
+box -112 -328 112 328
+use LELO_PCH_4p8x0p54  c2
+timestamp 1783691737
+transform 1 0 10004 0 1 4764
+box -148 -580 148 580
+use LELO_PCH_4p8x0p36  c3
+timestamp 1783691737
+transform 1 0 9986 0 1 7444
+box -130 -580 130 580
+use LELO_NCH_0p96x0p36  d0
+timestamp 1783691737
+transform 1 0 10842 0 1 552
+box -94 -184 94 184
+use LELO_NCH_2p4x0p54  d1
+timestamp 1783691737
+transform 1 0 10860 0 1 2176
+box -112 -328 112 328
+use LELO_PCH_4p8x0p54  d2
+timestamp 1783691737
+transform 1 0 10896 0 1 4764
+box -148 -580 148 580
+use LELO_PCH_4p8x0p36  d3
+timestamp 1783691737
+transform 1 0 10878 0 1 7444
+box -130 -580 130 580
+use LELO_NCH_0p96x0p36  e0
+timestamp 1783691737
+transform 1 0 11734 0 1 552
+box -94 -184 94 184
+use LELO_NCH_2p4x0p54  e1
+timestamp 1783691737
+transform 1 0 11752 0 1 2176
+box -112 -328 112 328
+use LELO_PCH_4p8x0p54  e2
+timestamp 1783691737
+transform 1 0 11788 0 1 4764
+box -148 -580 148 580
+use LELO_PCH_4p8x0p36  e3
+timestamp 1783691737
+transform 1 0 11770 0 1 7444
+box -130 -580 130 580
+use LELO_NCH_0p96x0p36  f0
+timestamp 1783691737
+transform 1 0 12626 0 1 552
+box -94 -184 94 184
+use LELO_NCH_2p4x0p54  f1
+timestamp 1783691737
+transform 1 0 12644 0 1 2176
+box -112 -328 112 328
+use LELO_PCH_4p8x0p54  f2
+timestamp 1783691737
+transform 1 0 12680 0 1 4764
+box -148 -580 148 580
+use LELO_PCH_4p8x0p36  f3
+timestamp 1783691737
+transform 1 0 12662 0 1 7444
+box -130 -580 130 580
+use LELO_NCH_1p2x0p18  g0
+timestamp 1783691737
+transform 1 0 13428 0 1 624
+box -76 -208 76 208
+use LELO_NCH_1p2x0p18  g1
+timestamp 1783691737
+transform 1 0 14176 0 1 624
+box -76 -208 76 208
+use LELO_PCH_4p8x0p18  g2
+timestamp 1783691737
+transform 1 0 13464 0 1 7444
+box -112 -580 112 580
+use LELO_PCH_4p8x0p18  g3
+timestamp 1783691737
+transform 1 0 14212 0 1 7444
+box -112 -580 112 580
+use JNWTR_RES2  x1 ../JNW_TR_SKY130A
+timestamp 1737500400
+transform 1 0 5428 0 1 120
+box -36 -120 684 2760
+use JNWTR_RES4  x2 ../JNW_TR_SKY130A
+timestamp 1737500400
+transform 1 0 5212 0 1 3160
+box -36 -120 1116 2760
 << end >>
