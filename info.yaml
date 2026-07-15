@@ -4,10 +4,11 @@ author: nimakolahi
 github: nimakolahi
 tagline: Implement a basic VCO architecture.
 email: nimakolahi@gmail.com
+baseurl: "/lelo_vco_sky130a"
 url: nimakolahi.github.io
 doc:
   libraries:
      LELO_VCO_SKY130A:
-         - VCO
+         - LELO_VCO
 sim:
    LELO_VCO: make typical
