@@ -1,0 +1,10 @@
+# LELO_VCO device types (map each to a jnw_atr JNWATR_* tapped cell variant)
+# cell                   type W(um)    L(um)   instances
+  LELO_NCH_0p96x0p36     NCH  0.96     0.36    M10 M11 M12 M13 M14 M26 (NMOS current mirror)
+  LELO_NCH_2p4x0p54      NCH  2.4      0.54    M0 M1 M2 M3 M4 (ring NMOS)
+  LELO_NCH_1p2x0p18      NCH  1.2      0.18    M20 M21 (output buffer NMOS)
+  LELO_NCH_96x0p9        NCH  9.6 x10f 0.9     M27 (tail, Vin)
+  LELO_PCH_4p8x0p54      PCH  4.8      0.54    M5 M6 M7 M8 M9 (ring PMOS)
+  LELO_PCH_4p8x0p18      PCH  4.8      0.18    M22 M23 (output buffer PMOS)
+  LELO_PCH_2p4x0p36      PCH  2.4      0.36    M25 (PMOS bias diode)
+  LELO_PCH_4p8x0p36      PCH  4.8      0.36    M15 M16 M17 M18 M19 M24 (PMOS current mirror)
