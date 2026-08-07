@@ -1,9 +1,7 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1783691737
-<< checkpaint >>
-rect -1408 -1840 1408 1840
+timestamp 1785406235
 << nwell >>
 rect -148 -580 148 580
 << pmos >>
@@ -65,8 +63,11 @@ rect 38 -561 50 -527
 rect -50 -567 50 -561
 << labels >>
 flabel locali s -100 468 -66 484 0 FreeSans 400 0 0 0 D
+port 1 nsew
 flabel locali s 66 468 100 484 0 FreeSans 400 0 0 0 S
+port 3 nsew
 flabel locali s -54 527 -38 561 0 FreeSans 400 0 0 0 G
+port 2 nsew
 << properties >>
 string FIXED_BBOX -148 -580 148 580
 << end >>

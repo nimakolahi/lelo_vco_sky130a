@@ -1,74 +1,70 @@
 magic
 tech sky130A
-magscale 1 2
-timestamp 1783691737
-<< checkpaint >>
-rect -1314 1504 1314 1588
-rect -1360 1500 1360 1504
-rect -1372 -1500 1372 1500
-rect -1360 -1504 1360 -1500
-rect -1314 -1588 1314 -1504
+timestamp 1785406235
 << nmos >>
-rect -54 -240 54 240
+rect -27 -120 27 120
 << ndiff >>
-rect -112 228 -54 240
-rect -112 -228 -100 228
-rect -66 -228 -54 228
-rect -112 -240 -54 -228
-rect 54 228 112 240
-rect 54 -228 66 228
-rect 100 -228 112 228
-rect 54 -240 112 -228
+rect -56 114 -27 120
+rect -56 -114 -50 114
+rect -33 -114 -27 114
+rect -56 -120 -27 -114
+rect 27 114 56 120
+rect 27 -114 33 114
+rect 50 -114 56 114
+rect 27 -120 56 -114
 << ndiffc >>
-rect -100 -228 -66 228
-rect 66 -228 100 228
+rect -50 -114 -33 114
+rect 33 -114 50 114
 << poly >>
-rect -54 312 54 328
-rect -54 278 -38 312
-rect 38 278 54 312
-rect -54 240 54 278
-rect -54 -278 54 -240
-rect -54 -312 -38 -278
-rect 38 -312 54 -278
-rect -54 -328 54 -312
+rect -27 156 27 164
+rect -27 139 -19 156
+rect 19 139 27 156
+rect -27 120 27 139
+rect -27 -139 27 -120
+rect -27 -156 -19 -139
+rect 19 -156 27 -139
+rect -27 -164 27 -156
 << polycont >>
-rect -38 278 38 312
-rect -38 -312 38 -278
+rect -19 139 19 156
+rect -19 -156 19 -139
 << locali >>
-rect -54 278 -38 312
-rect 38 278 54 312
-rect -100 228 -66 244
-rect -100 -244 -66 -228
-rect 66 228 100 244
-rect 66 -244 100 -228
-rect -54 -312 -38 -278
-rect 38 -312 54 -278
+rect -27 139 -19 156
+rect 19 139 27 156
+rect -50 114 -33 122
+rect -50 -122 -33 -114
+rect 33 114 50 122
+rect 33 -122 50 -114
+rect -27 -156 -19 -139
+rect 19 -156 27 -139
 << viali >>
-rect -38 278 38 312
-rect -100 -228 -66 228
-rect 66 -228 100 228
-rect -38 -312 38 -278
+rect -19 139 19 156
+rect -50 -114 -33 114
+rect 33 -114 50 114
+rect -19 -156 19 -139
 << metal1 >>
-rect -50 312 50 318
-rect -50 278 -38 312
-rect 38 278 50 312
-rect -50 272 50 278
-rect -106 228 -60 240
-rect -106 -228 -100 228
-rect -66 -228 -60 228
-rect -106 -240 -60 -228
-rect 60 228 106 240
-rect 60 -228 66 228
-rect 100 -228 106 228
-rect 60 -240 106 -228
-rect -50 -278 50 -272
-rect -50 -312 -38 -278
-rect 38 -312 50 -278
-rect -50 -318 50 -312
+rect -25 156 25 159
+rect -25 139 -19 156
+rect 19 139 25 156
+rect -25 136 25 139
+rect -53 114 -30 120
+rect -53 -114 -50 114
+rect -33 -114 -30 114
+rect -53 -120 -30 -114
+rect 30 114 53 120
+rect 30 -114 33 114
+rect 50 -114 53 114
+rect 30 -120 53 -114
+rect -25 -139 25 -136
+rect -25 -156 -19 -139
+rect 19 -156 25 -139
+rect -25 -159 25 -156
 << labels >>
-flabel locali s -100 228 -66 244 0 FreeSans 400 0 0 0 D
-flabel locali s 66 228 100 244 0 FreeSans 400 0 0 0 S
-flabel locali s -54 278 -38 312 0 FreeSans 400 0 0 0 G
+flabel locali s -50 114 -33 122 0 FreeSans 200 0 0 0 D
+port 1 nsew
+flabel locali s 33 114 50 122 0 FreeSans 200 0 0 0 S
+port 3 nsew
+flabel locali s -27 139 -19 156 0 FreeSans 200 0 0 0 G
+port 2 nsew
 << properties >>
-string FIXED_BBOX -112 -328 112 328
+string FIXED_BBOX -56 -164 56 164
 << end >>
