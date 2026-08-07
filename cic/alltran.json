@@ -1,0 +1,542 @@
+
+{
+   "cells" : [
+
+        { "name" : "PCH_2C1F2",
+          "inherit" : "PCH",
+          "abstract" : 0,
+          "afterNew":{
+              "copyColumns": [
+                  {
+                      "count": 0,
+                      "offset": 9,
+                      "length": 1
+                  }
+              ]
+          }
+        },
+        { "name" : "PCH_2CTAPTOP",
+          "inherit" : "PTAPTOP",
+          "abstract" : 0,
+          "afterNew":{
+              "copyColumns": [
+                  {
+                      "count": 0,
+                      "offset": 9,
+                      "length": 1
+                  }
+              ]
+          }
+        },
+        { "name" : "PCH_2CTAPBOT",
+          "inherit" : "PTAPBOT",
+          "abstract" : 0,
+          "afterNew":{
+              "copyColumns": [
+                  {
+                      "count": 0,
+                      "offset": 9,
+                      "length": 1
+                  }
+              ]
+          }
+        },
+        { "name" : "PCH_2C5F0",
+          "inherit" : "PCH2",
+          "abstract" : 0,
+          "afterNew":{
+              "copyColumns": [
+                  {
+                      "count": 0,
+                      "offset": 9,
+                      "length": 1
+                  }
+              ]
+          }
+        },
+        { "name" : "PCH_2CTOP",
+          "spice" : [
+            ".subckt PCH_2CTOP",
+            "xa1 PCH_2CTAPBOT",
+            "xa2 D2 G2 S2 B PCH_2C1F2",
+            "xa3 D3 G3 S3 B PCH_2C5F0",
+            "xa4 PCH_2CTAPTOP",
+            "xb1 PCH_2CTAPBOT",
+            "xb2 D4 G4 S4 B PCH_2C1F2",
+            "xb3 D5 G5 S5 B PCH_2C5F0",
+            "xb4 PCH_2CTAPTOP",
+            ".ends"
+        ]
+        }
+        ,
+        { "name" : "PCH_4C1F2",
+          "inherit" : "PCH",
+          "abstract" : 0,
+          "afterNew":{
+              "copyColumns": [
+                  {
+                      "count": 2,
+                      "offset": 9,
+                      "length": 1
+                  }
+              ]
+          }
+        },
+        { "name" : "PCH_4CTAPTOP",
+          "inherit" : "PTAPTOP",
+          "abstract" : 0,
+          "afterNew":{
+              "copyColumns": [
+                  {
+                      "count": 2,
+                      "offset": 9,
+                      "length": 1
+                  }
+              ]
+          }
+        },
+        { "name" : "PCH_4CTAPBOT",
+          "inherit" : "PTAPBOT",
+          "abstract" : 0,
+          "afterNew":{
+              "copyColumns": [
+                  {
+                      "count": 2,
+                      "offset": 9,
+                      "length": 1
+                  }
+              ]
+          }
+        },
+        { "name" : "PCH_4C5F0",
+          "inherit" : "PCH2",
+          "abstract" : 0,
+          "afterNew":{
+              "copyColumns": [
+                  {
+                      "count": 2,
+                      "offset": 9,
+                      "length": 1
+                  }
+              ]
+          }
+        },
+        { "name" : "PCH_4CTOP",
+          "spice" : [
+            ".subckt PCH_4CTOP",
+            "xa1 PCH_4CTAPBOT",
+            "xa2 D2 G2 S2 B PCH_4C1F2",
+            "xa3 D3 G3 S3 B PCH_4C5F0",
+            "xa4 PCH_4CTAPTOP",
+            "xb1 PCH_4CTAPBOT",
+            "xb2 D4 G4 S4 B PCH_4C1F2",
+            "xb3 D5 G5 S5 B PCH_4C5F0",
+            "xb4 PCH_4CTAPTOP",
+            ".ends"
+        ]
+        }
+        ,
+        { "name" : "PCH_8C1F2",
+          "inherit" : "PCH",
+          "abstract" : 0,
+          "afterNew":{
+              "copyColumns": [
+                  {
+                      "count": 6,
+                      "offset": 9,
+                      "length": 1
+                  }
+              ]
+          }
+        },
+        { "name" : "PCH_8CTAPTOP",
+          "inherit" : "PTAPTOP",
+          "abstract" : 0,
+          "afterNew":{
+              "copyColumns": [
+                  {
+                      "count": 6,
+                      "offset": 9,
+                      "length": 1
+                  }
+              ]
+          }
+        },
+        { "name" : "PCH_8CTAPBOT",
+          "inherit" : "PTAPBOT",
+          "abstract" : 0,
+          "afterNew":{
+              "copyColumns": [
+                  {
+                      "count": 6,
+                      "offset": 9,
+                      "length": 1
+                  }
+              ]
+          }
+        },
+        { "name" : "PCH_8C5F0",
+          "inherit" : "PCH2",
+          "abstract" : 0,
+          "afterNew":{
+              "copyColumns": [
+                  {
+                      "count": 6,
+                      "offset": 9,
+                      "length": 1
+                  }
+              ]
+          }
+        },
+        { "name" : "PCH_8CTOP",
+          "spice" : [
+            ".subckt PCH_8CTOP",
+            "xa1 PCH_8CTAPBOT",
+            "xa2 D2 G2 S2 B PCH_8C1F2",
+            "xa3 D3 G3 S3 B PCH_8C5F0",
+            "xa4 PCH_8CTAPTOP",
+            "xb1 PCH_8CTAPBOT",
+            "xb2 D4 G4 S4 B PCH_8C1F2",
+            "xb3 D5 G5 S5 B PCH_8C5F0",
+            "xb4 PCH_8CTAPTOP",
+            ".ends"
+        ]
+        }
+        ,
+        { "name" : "PCH_12C1F2",
+          "inherit" : "PCH",
+          "abstract" : 0,
+          "afterNew":{
+              "copyColumns": [
+                  {
+                      "count": 10,
+                      "offset": 9,
+                      "length": 1
+                  }
+              ]
+          }
+        },
+        { "name" : "PCH_12CTAPTOP",
+          "inherit" : "PTAPTOP",
+          "abstract" : 0,
+          "afterNew":{
+              "copyColumns": [
+                  {
+                      "count": 10,
+                      "offset": 9,
+                      "length": 1
+                  }
+              ]
+          }
+        },
+        { "name" : "PCH_12CTAPBOT",
+          "inherit" : "PTAPBOT",
+          "abstract" : 0,
+          "afterNew":{
+              "copyColumns": [
+                  {
+                      "count": 10,
+                      "offset": 9,
+                      "length": 1
+                  }
+              ]
+          }
+        },
+        { "name" : "PCH_12C5F0",
+          "inherit" : "PCH2",
+          "abstract" : 0,
+          "afterNew":{
+              "copyColumns": [
+                  {
+                      "count": 10,
+                      "offset": 9,
+                      "length": 1
+                  }
+              ]
+          }
+        },
+        { "name" : "PCH_12CTOP",
+          "spice" : [
+            ".subckt PCH_12CTOP",
+            "xa1 PCH_12CTAPBOT",
+            "xa2 D2 G2 S2 B PCH_12C1F2",
+            "xa3 D3 G3 S3 B PCH_12C5F0",
+            "xa4 PCH_12CTAPTOP",
+            "xb1 PCH_12CTAPBOT",
+            "xb2 D4 G4 S4 B PCH_12C1F2",
+            "xb3 D5 G5 S5 B PCH_12C5F0",
+            "xb4 PCH_12CTAPTOP",
+            ".ends"
+        ]
+        }
+        ,
+        { "name" : "NCH_2C1F2",
+          "inherit" : "NCH",
+          "abstract" : 0,
+          "afterNew":{
+              "copyColumns": [
+                  {
+                      "count": 0,
+                      "offset": 9,
+                      "length": 1
+                  }
+              ]
+          }
+        },
+        { "name" : "NCH_2CTAPTOP",
+          "inherit" : "NTAPTOP",
+          "abstract" : 0,
+          "afterNew":{
+              "copyColumns": [
+                  {
+                      "count": 0,
+                      "offset": 9,
+                      "length": 1
+                  }
+              ]
+          }
+        },
+        { "name" : "NCH_2CTAPBOT",
+          "inherit" : "NTAPBOT",
+          "abstract" : 0,
+          "afterNew":{
+              "copyColumns": [
+                  {
+                      "count": 0,
+                      "offset": 9,
+                      "length": 1
+                  }
+              ]
+          }
+        },
+        { "name" : "NCH_2C5F0",
+          "inherit" : "NCH2",
+          "abstract" : 0,
+          "afterNew":{
+              "copyColumns": [
+                  {
+                      "count": 0,
+                      "offset": 9,
+                      "length": 1
+                  }
+              ]
+          }
+        },
+        { "name" : "NCH_2CTOP",
+          "spice" : [
+            ".subckt NCH_2CTOP",
+            "xa1 NCH_2CTAPBOT",
+            "xa2 D2 G2 S2 B NCH_2C1F2",
+            "xa3 D3 G3 S3 B NCH_2C5F0",
+            "xa4 NCH_2CTAPTOP",
+            "xb1 NCH_2CTAPBOT",
+            "xb2 D4 G4 S4 B NCH_2C1F2",
+            "xb3 D5 G5 S5 B NCH_2C5F0",
+            "xb4 NCH_2CTAPTOP",
+            ".ends"
+        ]
+        }
+        ,
+        { "name" : "NCH_4C1F2",
+          "inherit" : "NCH",
+          "abstract" : 0,
+          "afterNew":{
+              "copyColumns": [
+                  {
+                      "count": 2,
+                      "offset": 9,
+                      "length": 1
+                  }
+              ]
+          }
+        },
+        { "name" : "NCH_4CTAPTOP",
+          "inherit" : "NTAPTOP",
+          "abstract" : 0,
+          "afterNew":{
+              "copyColumns": [
+                  {
+                      "count": 2,
+                      "offset": 9,
+                      "length": 1
+                  }
+              ]
+          }
+        },
+        { "name" : "NCH_4CTAPBOT",
+          "inherit" : "NTAPBOT",
+          "abstract" : 0,
+          "afterNew":{
+              "copyColumns": [
+                  {
+                      "count": 2,
+                      "offset": 9,
+                      "length": 1
+                  }
+              ]
+          }
+        },
+        { "name" : "NCH_4C5F0",
+          "inherit" : "NCH2",
+          "abstract" : 0,
+          "afterNew":{
+              "copyColumns": [
+                  {
+                      "count": 2,
+                      "offset": 9,
+                      "length": 1
+                  }
+              ]
+          }
+        },
+        { "name" : "NCH_4CTOP",
+          "spice" : [
+            ".subckt NCH_4CTOP",
+            "xa1 NCH_4CTAPBOT",
+            "xa2 D2 G2 S2 B NCH_4C1F2",
+            "xa3 D3 G3 S3 B NCH_4C5F0",
+            "xa4 NCH_4CTAPTOP",
+            "xb1 NCH_4CTAPBOT",
+            "xb2 D4 G4 S4 B NCH_4C1F2",
+            "xb3 D5 G5 S5 B NCH_4C5F0",
+            "xb4 NCH_4CTAPTOP",
+            ".ends"
+        ]
+        }
+        ,
+        { "name" : "NCH_8C1F2",
+          "inherit" : "NCH",
+          "abstract" : 0,
+          "afterNew":{
+              "copyColumns": [
+                  {
+                      "count": 6,
+                      "offset": 9,
+                      "length": 1
+                  }
+              ]
+          }
+        },
+        { "name" : "NCH_8CTAPTOP",
+          "inherit" : "NTAPTOP",
+          "abstract" : 0,
+          "afterNew":{
+              "copyColumns": [
+                  {
+                      "count": 6,
+                      "offset": 9,
+                      "length": 1
+                  }
+              ]
+          }
+        },
+        { "name" : "NCH_8CTAPBOT",
+          "inherit" : "NTAPBOT",
+          "abstract" : 0,
+          "afterNew":{
+              "copyColumns": [
+                  {
+                      "count": 6,
+                      "offset": 9,
+                      "length": 1
+                  }
+              ]
+          }
+        },
+        { "name" : "NCH_8C5F0",
+          "inherit" : "NCH2",
+          "abstract" : 0,
+          "afterNew":{
+              "copyColumns": [
+                  {
+                      "count": 6,
+                      "offset": 9,
+                      "length": 1
+                  }
+              ]
+          }
+        },
+        { "name" : "NCH_8CTOP",
+          "spice" : [
+            ".subckt NCH_8CTOP",
+            "xa1 NCH_8CTAPBOT",
+            "xa2 D2 G2 S2 B NCH_8C1F2",
+            "xa3 D3 G3 S3 B NCH_8C5F0",
+            "xa4 NCH_8CTAPTOP",
+            "xb1 NCH_8CTAPBOT",
+            "xb2 D4 G4 S4 B NCH_8C1F2",
+            "xb3 D5 G5 S5 B NCH_8C5F0",
+            "xb4 NCH_8CTAPTOP",
+            ".ends"
+        ]
+        }
+        ,
+        { "name" : "NCH_12C1F2",
+          "inherit" : "NCH",
+          "abstract" : 0,
+          "afterNew":{
+              "copyColumns": [
+                  {
+                      "count": 10,
+                      "offset": 9,
+                      "length": 1
+                  }
+              ]
+          }
+        },
+        { "name" : "NCH_12CTAPTOP",
+          "inherit" : "NTAPTOP",
+          "abstract" : 0,
+          "afterNew":{
+              "copyColumns": [
+                  {
+                      "count": 10,
+                      "offset": 9,
+                      "length": 1
+                  }
+              ]
+          }
+        },
+        { "name" : "NCH_12CTAPBOT",
+          "inherit" : "NTAPBOT",
+          "abstract" : 0,
+          "afterNew":{
+              "copyColumns": [
+                  {
+                      "count": 10,
+                      "offset": 9,
+                      "length": 1
+                  }
+              ]
+          }
+        },
+        { "name" : "NCH_12C5F0",
+          "inherit" : "NCH2",
+          "abstract" : 0,
+          "afterNew":{
+              "copyColumns": [
+                  {
+                      "count": 10,
+                      "offset": 9,
+                      "length": 1
+                  }
+              ]
+          }
+        },
+        { "name" : "NCH_12CTOP",
+          "spice" : [
+            ".subckt NCH_12CTOP",
+            "xa1 NCH_12CTAPBOT",
+            "xa2 D2 G2 S2 B NCH_12C1F2",
+            "xa3 D3 G3 S3 B NCH_12C5F0",
+            "xa4 NCH_12CTAPTOP",
+            "xb1 NCH_12CTAPBOT",
+            "xb2 D4 G4 S4 B NCH_12C1F2",
+            "xb3 D5 G5 S5 B NCH_12C5F0",
+            "xb4 NCH_12CTAPTOP",
+            ".ends"
+        ]
+        }
+        
+   ]
+}

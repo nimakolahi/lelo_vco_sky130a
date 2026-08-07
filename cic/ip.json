@@ -1,0 +1,49 @@
+{
+  "options": {
+    "prefix": ""
+  },
+  "include": [
+    "transistors.json",
+    "alltran.json"
+  ],
+  "cells": [
+    {
+      "name": "LELO_VCO",
+      "class": "cIcCore::LayoutCell",
+      "spice": [
+        ".subckt LELO_VCO VDD_1V8 VSS Vin Vout",
+        "x1 net20 VSS VSS NCH_2C1F2",
+        "x2 net16 net20 VSS NCH_2C1F2",
+        "XM10 net15 net17 VSS VSS NCH_2C1F2",
+        "XM20 Vout net19 VSS VSS NCH_2C1F2",
+        "XM0 net14 net13 net15 VSS NCH_4C1F2",
+        "XM27 net18 Vin net16 VSS NCH_12C5F0",
+        "XM25 net18 net18 VDD_1V8 VDD_1V8 PCH_4C1F2",
+        "XM22 Vout net19 VDD_1V8 VDD_1V8 PCH_8C1F2",
+        "XM15 net5 net18 VDD_1V8 VDD_1V8 PCH_8C1F2",
+        "XM5 net14 net13 net5 VDD_1V8 PCH_8C1F2",
+        "XM1 net13 net10 net12 VSS NCH_4C1F2",
+        "XM2 net10 net8 net11 VSS NCH_4C1F2",
+        "XM3 net8 net6 net9 VSS NCH_4C1F2",
+        "XM4 net6 net14 net7 VSS NCH_4C1F2",
+        "XM6 net13 net10 net4 VDD_1V8 PCH_8C1F2",
+        "XM7 net10 net8 net3 VDD_1V8 PCH_8C1F2",
+        "XM8 net8 net6 net2 VDD_1V8 PCH_8C1F2",
+        "XM9 net6 net14 net1 VDD_1V8 PCH_8C1F2",
+        "XM11 net12 net17 VSS VSS NCH_2C1F2",
+        "XM12 net11 net17 VSS VSS NCH_2C1F2",
+        "XM13 net9 net17 VSS VSS NCH_2C1F2",
+        "XM14 net7 net17 VSS VSS NCH_2C1F2",
+        "XM26 net17 net17 VSS VSS NCH_2C1F2",
+        "XM16 net4 net18 VDD_1V8 VDD_1V8 PCH_8C1F2",
+        "XM17 net3 net18 VDD_1V8 VDD_1V8 PCH_8C1F2",
+        "XM18 net2 net18 VDD_1V8 VDD_1V8 PCH_8C1F2",
+        "XM19 net1 net18 VDD_1V8 VDD_1V8 PCH_8C1F2",
+        "XM24 net17 net18 VDD_1V8 VDD_1V8 PCH_8C1F2",
+        "XM21 net19 net14 VSS VSS NCH_2C1F2",
+        "XM23 net19 net14 VDD_1V8 VDD_1V8 PCH_8C1F2",
+        ".ends"
+      ]
+    }
+  ]
+}
