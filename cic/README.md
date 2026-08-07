@@ -42,3 +42,16 @@ The hand LELO_VCO used stripped cicpy gencells on M1 -> the fused mesh we fought
 ## Reference templates
 - jnw_atr: cic/ip.py, ip.json, transistors.json (how tapped cells are declared)
 - lelo_gr01 design/oscillator.cic (closest: ring oscillator) — study its M2 routing
+
+## ✅ Environment is BUILT and WORKING (arm64)
+- `aicex/ciccreator/bin/linux/cic` — compiled natively on arm64 (Qt6). Verified: compiles a .cic.
+- Docker image **`lelo-cic:latest`** — ubuntu22.04 + Qt6 runtime + cicpy. Runs BOTH `cic` and `cicpy transpile`.
+  (aicex image has no Qt6, so run the `cic`/transpile steps in `lelo-cic`; DRC/LVS in the aicex image.)
+
+### Run the flow (once cic/ip.json exists)
+    # cic + transpile  ->  design/LELO_VCO_SKY130A/LELO_VCO.mag
+    docker run --rm -v <aicex>:/home/aicex -w /home/aicex/ip/lelo_vco_sky130a/design \
+      lelo-cic:latest bash -lc '\
+        ../../ciccreator/bin/linux/cic --I ../cic ../cic/ip.json ../cic/sky130.tech LELO_VCO && \
+        cicpy transpile LELO_VCO.cic ../cic/sky130.tech LELO_VCO --magic --spice'
+    # then DRC/LVS in the aicex image as usual:  make drc lvs CELL=LELO_VCO
