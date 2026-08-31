@@ -55,3 +55,34 @@ The hand LELO_VCO used stripped cicpy gencells on M1 -> the fused mesh we fought
         ../../ciccreator/bin/linux/cic --I ../cic ../cic/ip.json ../cic/sky130.tech LELO_VCO && \
         cicpy transpile LELO_VCO.cic ../cic/sky130.tech LELO_VCO --magic --spice'
     # then DRC/LVS in the aicex image as usual:  make drc lvs CELL=LELO_VCO
+
+## ⭐ Recommended path: AI-assisted `sch2mag` sidecar (from wulffern/rey_ldo_sky130a)
+That LDO repo is the **proven AI-assisted flow** (Claude Code did the layout). Cleaner than
+hand-authoring `ip.json` — it's declarative and you iterate at the *specification* level.
+
+**How it works**
+- `cicpy sch2mag` reads the **schematic** + a Python **sidecar** (`<CELL>.py`, a `SidecarCell`
+  subclass) + **`.groups.yaml`**, and emits a *placed + routed* layout.
+- Placement: `rows = [[...],[...]]` + a class per logical group (`match` regex on instances,
+  explicit `order`, `group` -> .groups.yaml). Mirroring via `afterPlace()`.
+- Routing: `paths`/`routes` — ChannelRoute with `track` + `drops` per net/layer (M2).
+- Physical props (tap/well/width/stacking) come from `.groups.yaml`, decoupled from the .py.
+- Hooks: `beforePlace / afterPlace / beforeRoute / afterPorts`.
+- Loop: **build -> check DRC/LVS -> change ONE declared thing.**
+
+**Maps directly onto LELO_VCO**
+    rows = [[ NMOS current mirror: M26 M10..M14 ],
+            [ ring NMOS + buffer: M0..M4 M20 M21 ],
+            [ ring PMOS + buffer: M5..M9 M22 M23 ],
+            [ PMOS current mirror: M25 M24 M15..M19 ]]   # = hand_placements.txt rows
+    groups: nmos (p-sub tap), pmos (nwell tap)           # taps for free
+    routes: net17->M26 diode, net18->M25 diode, ring hops, Vout, Vin  # M2, per net checklist
+
+**To do (needs Docker up)**
+1. Verify image cicpy supports `SidecarCell` (rey_ldo is recent — may need `pip install -U cicpy`).
+2. Draft `design/LELO_VCO_SKY130A/LELO_VCO.py` (sidecar) + `.groups.yaml` from the rey_ldo template.
+3. `cicpy sch2mag` -> layout -> `make drc lvs` -> iterate one declaration at a time.
+
+**vs the `ip.json` path (already in this branch):** `ip.json` compiles end-to-end today but is
+lower-level and needs device sizing. The `sch2mag` sidecar is the higher-level, proven route —
+prefer it for the clean, LVS-matching result.
