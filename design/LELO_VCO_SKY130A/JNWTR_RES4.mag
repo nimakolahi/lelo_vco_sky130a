@@ -1,0 +1,40 @@
+magic
+tech sky130A
+timestamp 1785406235
+<< pwell >>
+rect -18 -60 558 1380
+<< poly >>
+rect -18 -60 18 1140
+rect 522 -60 558 1140
+<< xpolycontact >>
+rect 90 900 126 1140
+rect 90 -60 126 180
+rect 198 900 234 1140
+rect 198 -60 234 180
+rect 306 900 342 1140
+rect 306 -60 342 180
+rect 414 900 450 1140
+rect 414 -60 450 180
+<< ppolyres >>
+rect 90 180 126 900
+rect 198 180 234 900
+rect 306 180 342 900
+rect 414 180 450 900
+<< locali >>
+rect -18 1260 126 1380
+rect 90 1140 126 1260
+rect 198 1260 342 1380
+rect 198 1140 234 1260
+rect 306 1140 342 1260
+rect 414 1260 558 1380
+rect 414 1140 450 1260
+rect 126 -60 198 180
+rect 342 -60 414 180
+<< labels >>
+flabel locali s -18 1260 126 1380 0 FreeSans 400 0 0 0 N
+port 1 nsew signal bidirectional
+flabel locali s 414 1260 558 1380 0 FreeSans 400 0 0 0 P
+port 2 nsew signal bidirectional
+<< properties >>
+string FIXED_BBOX 0 0 540 1320
+<< end >>
