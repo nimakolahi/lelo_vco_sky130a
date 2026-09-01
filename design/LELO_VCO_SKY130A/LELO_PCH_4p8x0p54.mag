@@ -1,9 +1,11 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1785406235
+timestamp 1788256485
+<< checkpaint >>
+rect -1510 -1959 1510 1959
 << nwell >>
-rect -148 -580 148 580
+rect -250 -699 250 699
 << pmos >>
 rect -54 -480 54 480
 << pdiff >>
@@ -18,6 +20,20 @@ rect 54 -480 112 -468
 << pdiffc >>
 rect -100 -468 -66 468
 rect 66 -468 100 468
+<< nsubdiff >>
+rect -214 629 -118 663
+rect 118 629 214 663
+rect -214 567 -180 629
+rect 180 567 214 629
+rect -214 -629 -180 -567
+rect 180 -629 214 -567
+rect -214 -663 -118 -629
+rect 118 -663 214 -629
+<< nsubdiffcont >>
+rect -118 629 118 663
+rect -214 -567 -180 567
+rect 180 -567 214 567
+rect -118 -663 118 -629
 << poly >>
 rect -54 561 54 577
 rect -54 527 -38 561
@@ -31,6 +47,10 @@ rect -54 -577 54 -561
 rect -38 527 38 561
 rect -38 -561 38 -527
 << locali >>
+rect -214 629 -118 663
+rect 118 629 214 663
+rect -214 567 -180 629
+rect 180 567 214 629
 rect -54 527 -38 561
 rect 38 527 54 561
 rect -100 468 -66 484
@@ -39,6 +59,10 @@ rect 66 468 100 484
 rect 66 -484 100 -468
 rect -54 -561 -38 -527
 rect 38 -561 54 -527
+rect -214 -629 -180 -567
+rect 180 -629 214 -567
+rect -214 -663 -118 -629
+rect 118 -663 214 -629
 << viali >>
 rect -38 527 38 561
 rect -100 -468 -66 468
@@ -62,12 +86,14 @@ rect -50 -561 -38 -527
 rect 38 -561 50 -527
 rect -50 -567 50 -561
 << labels >>
-flabel locali s -100 468 -66 484 0 FreeSans 400 0 0 0 D
+flabel locali s -4 -650 4 -642 0 FreeSans 200 0 0 0 B
+port 4 nsew
+flabel metal1 s -87 -4 -79 4 0 FreeSans 200 0 0 0 D
 port 1 nsew
-flabel locali s 66 468 100 484 0 FreeSans 400 0 0 0 S
+flabel metal1 s 79 -4 87 4 0 FreeSans 200 0 0 0 S
 port 3 nsew
-flabel locali s -54 527 -38 561 0 FreeSans 400 0 0 0 G
+flabel metal1 s -4 540 4 548 0 FreeSans 200 0 0 0 G
 port 2 nsew
 << properties >>
-string FIXED_BBOX -148 -580 148 580
+string FIXED_BBOX -197 -646 197 646
 << end >>
