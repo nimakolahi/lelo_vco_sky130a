@@ -22,7 +22,7 @@ class _Mirrorable(Stack):
     mirror_re = None
 
     def afterPlace(self, entry):
-        if self.mirror_re:
+        if False and self.mirror_re:
             for inst in self.instances:
                 nm = getattr(inst, "instanceName", "")
                 if re.match(self.mirror_re, nm):
@@ -36,17 +36,15 @@ class _Mirrorable(Stack):
 
 class _N(_Mirrorable):
     group = "nmos"
-    blocked = [("VSS", "bulk; carried by the abutted guard rails")]
 
 
 class _P(_Mirrorable):
     group = "pmos"
-    blocked = [("VDD_1V8", "bulk; carried by the abutted guard rails")]
 
 
 class LELO_VCO(SidecarCell):
 
-    channel = 6
+    channel = 24
 
     # ---- NMOS stage columns: [mirror-sense (bottom), ring (top)] ----
     class NA0(_N):
@@ -93,21 +91,25 @@ class LELO_VCO(SidecarCell):
     ]
 
     supplies = [
-        {"net": "VDD_1V8", "ring": "t", "strap": "top"},
-        {"net": "VSS", "ring": "b", "strap": "bottom"},
+        {"net": "VDD_1V8", "ring": "t", "strap": "top", "pin_strap": True},
+        {"net": "VSS", "ring": "b", "strap": "bottom", "pin_strap": True},
     ]
 
     # ---- crossing nets (drops auto-discovered: every subcell exposing the
     # net, M2, centered) ----
+    # Drop SIDES matter: each stage column receives 3 drops (ring-in, ring-out,
+    # bias bus). Without sides they share one lane and short (rey_ldo documents
+    # this exact failure). Drain-side drop -> "left", gate-side -> "right",
+    # bias bus -> "center".
     routes = [
-        {"net": "net13", "track": 0},
-        {"net": "net10", "track": 1},
-        {"net": "net8",  "track": 2},
-        {"net": "net6",  "track": 3},
-        {"net": "net14", "track": 4},
-        {"net": "net17", "track": 5},
-        {"net": "net18", "track": 6},
-        {"net": "net19", "track": 7},
-        {"net": "Vout",  "track": 8},
-        {"net": "net16", "track": 9},
+        {"net": "net13", "track": 0, "drops": [[NA0, "M2", "right"], [NA1, "M2", "left"], [PA0, "M2", "right"], [PA1, "M2", "left"]]},
+        {"net": "net10", "track": 1, "drops": [[NA1, "M2", "right"], [NA2, "M2", "left"], [PA1, "M2", "right"], [PA2, "M2", "left"]]},
+        {"net": "net8",  "track": 2, "drops": [[NA2, "M2", "right"], [NA3, "M2", "left"], [PA2, "M2", "right"], [PA3, "M2", "left"]]},
+        {"net": "net6",  "track": 3, "drops": [[NA3, "M2", "right"], [NA4, "M2", "left"], [PA3, "M2", "right"], [PA4, "M2", "left"]]},
+        {"net": "net14", "track": 4, "drops": [[NA0, "M2", "left"], [NA4, "M2", "right"], [PA0, "M2", "left"], [PA4, "M2", "right"], [n_buf, "M2", "left"], [p_buf, "M2", "left"]]},
+        {"net": "net17", "track": 5, "drops": [[n_diode, "M2", "center"], [NA0, "M2", "center"], [NA1, "M2", "center"], [NA2, "M2", "center"], [NA3, "M2", "center"], [NA4, "M2", "center"], [p_ref, "M2", "left"]]},
+        {"net": "net18", "track": 6, "drops": [[p_ref, "M2", "right"], [PA0, "M2", "center"], [PA1, "M2", "center"], [PA2, "M2", "center"], [PA3, "M2", "center"], [PA4, "M2", "center"], [tail, "M2", "left"]]},
+        {"net": "net19", "track": 7, "drops": [[n_buf, "M2", "center"], [p_buf, "M2", "center"]]},
+        {"net": "Vout",  "track": 8, "drops": [[n_buf, "M2", "right"], [p_buf, "M2", "right"]]},
+        {"net": "net16", "track": 9, "drops": [[res, "M2", "center"], [tail, "M2", "right"]]},
     ]
