@@ -86,14 +86,8 @@ N 480 -390 570 -390 {lab=Vout}
 N 110 -760 230 -760 {lab=VDD_1V8}
 N 230 -760 360 -760 {lab=VDD_1V8}
 N -470 -320 -470 -300 {lab=#net16}
-N -470 -280 -450 -280 {lab=#net20}
-N -450 -280 -450 -230 {lab=#net20}
-N -470 -230 -450 -230 {lab=#net20}
 N -470 -210 -470 -190 {lab=VSS}
 N -470 -190 -470 -30 {lab=VSS}
-N -470 -260 -460 -260 {lab=VSS}
-N -460 -260 -460 -210 {lab=VSS}
-N -470 -210 -460 -210 {lab=VSS}
 N -400 -660 -400 -610 {lab=#net18}
 N -400 -610 -280 -610 {lab=#net18}
 N -280 -660 -280 -610 {lab=#net18}
@@ -171,6 +165,12 @@ N -540 -610 -470 -610 {lab=#net18}
 N -470 -610 -400 -610 {lab=#net18}
 N -360 -200 -280 -200 {lab=#net17}
 N -280 -200 -280 -130 {lab=#net17}
+N -490 -280 -470 -280 {lab=VSS}
+N -470 -280 -470 -210 {lab=VSS}
+N -490 -260 -470 -260 {lab=VSS}
+N -490 -240 -450 -240 {lab=#net16}
+N -450 -300 -450 -240 {lab=#net16}
+N -470 -300 -450 -300 {lab=#net16}
 C {cborder/border_s.sym} 480 110 0 0 {
 user="Nima"
 company="PolitoLirmm"}
@@ -178,8 +178,6 @@ C {devices/ipin.sym} -550 -760 0 0 {name=p1 lab=VDD_1V8}
 C {devices/ipin.sym} -560 -30 0 0 {name=p2 lab=VSS}
 C {devices/ipin.sym} -560 -390 0 0 {name=p3 lab=Vin}
 C {devices/opin.sym} 570 -390 0 0 {name=p4 lab=Vout}
-C {JNW_TR_SKY130A/JNWTR_RES2.sym} -490 -230 0 1 {name=x1 }
-C {JNW_TR_SKY130A/JNWTR_RES4.sym} -490 -300 0 1 {name=x2 }
 C {LELO_VCO_SKY130A/LELO_NCH_0p96x0p36.sym} 190 -130 0 0 {name=M10}
 C {LELO_VCO_SKY130A/LELO_NCH_1p2x0p18.sym} 440 -190 0 0 {name=M20}
 C {LELO_VCO_SKY130A/LELO_NCH_2p4x0p54.sym} 190 -270 0 0 {name=M0 }
@@ -208,3 +206,4 @@ C {LELO_VCO_SKY130A/LELO_PCH_4p8x0p36.sym} -280 -660 0 0 {name=M19}
 C {LELO_VCO_SKY130A/LELO_PCH_4p8x0p36.sym} -400 -660 0 0 {name=M24}
 C {LELO_VCO_SKY130A/LELO_NCH_1p2x0p18.sym} 320 -190 0 0 {name=M21}
 C {LELO_VCO_SKY130A/LELO_PCH_4p8x0p18.sym} 320 -600 0 0 {name=M23}
+C {LELO_VCO_SKY130A/LELO_R1_40K.sym} -510 -240 2 0 {name=x1 }
