@@ -1,0 +1,70 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1788355029
+<< checkpaint >>
+rect -1876 2049 1876 2215
+rect -1876 -2049 2125 2049
+rect -1876 -2215 1876 -2049
+<< pwell >>
+rect -616 -955 616 955
+<< psubdiff >>
+rect -580 885 -484 919
+rect 484 885 580 919
+rect -580 823 -546 885
+rect 546 823 580 885
+rect -580 -885 -546 -823
+rect 546 -885 580 -823
+rect -580 -919 -484 -885
+rect 484 -919 580 -885
+<< psubdiffcont >>
+rect -484 885 484 919
+rect -580 -823 -546 823
+rect 546 -823 580 823
+rect -484 -919 484 -885
+<< xpolycontact >>
+rect -450 -789 -380 -357
+rect 380 -789 450 -357
+<< ppolyres >>
+rect -450 719 -214 789
+rect -450 -357 -380 719
+rect -284 -719 -214 719
+rect -118 719 118 789
+rect -118 -719 -48 719
+rect -284 -789 -48 -719
+rect 48 -719 118 719
+rect 214 719 450 789
+rect 214 -719 284 719
+rect 48 -789 284 -719
+rect 380 -357 450 719
+<< locali >>
+rect -580 885 -484 919
+rect 484 885 580 919
+rect -580 823 -546 885
+rect 546 823 580 885
+rect -580 -885 -546 -823
+rect 546 -885 580 -823
+rect -580 -919 -484 -885
+rect 484 -919 580 -885
+<< viali >>
+rect -434 -771 -396 -374
+rect 396 -771 434 -374
+<< metal1 >>
+rect -440 -374 -390 -362
+rect -440 -771 -434 -374
+rect -396 -771 -390 -374
+rect -440 -783 -390 -771
+rect 390 -374 440 -362
+rect 390 -771 396 -374
+rect 434 -771 440 -374
+rect 390 -783 440 -771
+<< labels >>
+flabel xpolycontact s -400 -400 -400 -400 0 FreeSans 200 0 0 0 R1
+port 1 nsew signal bidirectional
+flabel xpolycontact s 400 -400 400 -400 0 FreeSans 200 0 0 0 R2
+port 2 nsew signal bidirectional
+flabel locali s -500 -900 -500 -900 0 FreeSans 200 0 0 0 B
+port 3 nsew signal bidirectional
+<< properties >>
+string FIXED_BBOX -563 -902 563 902
+<< end >>
