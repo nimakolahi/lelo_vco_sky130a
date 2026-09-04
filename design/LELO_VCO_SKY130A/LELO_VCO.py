@@ -22,14 +22,50 @@ class _Mirrorable(Stack):
     mirror_re = None
 
     def afterPlace(self, entry):
-        if False and self.mirror_re:  # NOTE: overlaps devices; see commit msg
-            for inst in self.instances:
-                nm = getattr(inst, "instanceName", "")
-                if re.match(self.mirror_re, nm):
-                    x, y = inst.x1, inst.y1
-                    inst.setAngle("MY")
-                    inst.moveTo(int(x), int(y))
-                    inst.updateBoundingRect()
+        """Flip the mirror-sense device left-right so its drain (the feed node)
+        shares a lane with the ring device's source.
+
+        setAngle() RESETS xcell/ycell, but the placer had already put the
+        cell's centre-origin fold in ycell. Losing it drops the mirrored
+        device half a cell into its neighbour (measured: PA3 XM18 overlapped
+        XM8 by 646). A left-right mirror must not touch the y fold, so
+        restore ycell after setAngle and keep the new xcell.
+        """
+        #- DISABLED: the re-pin below is now correct (no overlap), but with the
+        #- devices properly abutting, the widened D/S pads touch across the seam
+        #- and short the ring device's D/G/S. Needs a seam gap before enabling.
+        if True or not self.mirror_re:
+            return None
+        for inst in self.instances:
+            nm = getattr(inst, "instanceName", "")
+            if not re.match(self.mirror_re, nm):
+                continue
+            x, y = inst.x1, inst.y1
+            oy = getattr(inst, "ycell", 0)
+            inst.setAngle("MY")
+            inst.ycell = oy
+            inst.moveTo(int(x), int(y))
+            inst.updateBoundingRect()
+        return None
+        combine = {"": "MY", "MY": "", "MX": "R180", "R180": "MX"}
+        for inst in self.instances:
+            nm = getattr(inst, "instanceName", "")
+            if not re.match(self.mirror_re, nm):
+                continue
+            cur = getattr(inst, "angle", "") or ""
+            new_angle = combine.get(cur, "MY")
+            x, y = inst.x1, inst.y1
+            inst.setAngle(new_angle)
+            lc = getattr(inst, "layoutcell", None)
+            if lc is not None:
+                if new_angle == "R180":
+                    inst.xcell = lc.x2
+                    inst.ycell = lc.y2
+                elif new_angle == "":
+                    inst.xcell = 0
+                    inst.ycell = 0
+            inst.moveTo(int(x), int(y))
+            inst.updateBoundingRect()
         return None
 
 
