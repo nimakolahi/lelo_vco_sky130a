@@ -1,0 +1,29 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1788480000
+<< checkpaint >>
+rect 0 0 358 2104
+<< metal1 >>
+rect 179 1454 244 1462
+rect 179 402 244 410
+rect 110 1454 118 1462
+rect 110 402 118 410
+<< locali >>
+rect 175 808 183 816
+use LELO_PCH_2p4x0p36 XM25 ../LELO_VCO_SKY130A
+transform 1 0 179 0 1 406
+box 179 406 537 1218
+use LELO_PCH_4p8x0p36 XM24 ../LELO_VCO_SKY130A
+transform 1 0 179 0 1 1458
+box 179 1458 537 2750
+<< labels >>
+flabel locali s 175 808 183 816 0 FreeSans 400 0 0 0 VDD_1V8
+port 1 nsew power bidirectional
+flabel metal1 s 110 1454 118 1462 0 FreeSans 400 0 0 0 net17
+port 2 nsew signal bidirectional
+flabel metal1 s 110 402 118 410 0 FreeSans 400 0 0 0 net18
+port 3 nsew signal bidirectional
+<< properties >>
+string FIXED_BBOX 0 0 358 2104
+<< end >>

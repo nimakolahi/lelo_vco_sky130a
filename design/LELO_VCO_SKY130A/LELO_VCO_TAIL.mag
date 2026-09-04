@@ -1,0 +1,13 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1788480000
+<< checkpaint >>
+rect 0 0 2608 2234
+use LELO_NCH_96x0p9 XM27 ../LELO_VCO_SKY130A
+transform 1 0 1304 0 1 1117
+box 1304 1117 3912 3351
+<< labels >>
+<< properties >>
+string FIXED_BBOX 0 0 2608 2234
+<< end >>
