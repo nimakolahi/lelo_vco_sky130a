@@ -1,0 +1,17 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1788480000
+<< checkpaint >>
+rect 0 0 1126 1804
+use LELO_R1_40K x1 ../LELO_VCO_SKY130A
+transform 1 0 563 0 1 902
+box 563 902 1689 2706
+<< labels >>
+flabel locali s 63 2 63 2 0 FreeSans 400 0 0 0 VSS
+port 1 nsew ground bidirectional
+flabel xpolycontact s 163 502 163 502 0 FreeSans 400 0 0 0 net16
+port 2 nsew signal bidirectional
+<< properties >>
+string FIXED_BBOX 0 0 1126 1804
+<< end >>
