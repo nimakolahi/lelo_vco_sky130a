@@ -22,7 +22,7 @@ class _Mirrorable(Stack):
     mirror_re = None
 
     def afterPlace(self, entry):
-        if False and self.mirror_re:
+        if False and self.mirror_re:  # NOTE: overlaps devices; see commit msg
             for inst in self.instances:
                 nm = getattr(inst, "instanceName", "")
                 if re.match(self.mirror_re, nm):
@@ -30,7 +30,6 @@ class _Mirrorable(Stack):
                     inst.setAngle("MY")
                     inst.moveTo(int(x), int(y))
                     inst.updateBoundingRect()
-            self.updateBoundingRect()
         return None
 
 
@@ -112,4 +111,8 @@ class LELO_VCO(SidecarCell):
         {"net": "net19", "track": 7, "drops": [[n_buf, "M2", "center"], [p_buf, "M2", "center"]]},
         {"net": "Vout",  "track": 8, "drops": [[n_buf, "M2", "right"], [p_buf, "M2", "right"]]},
         {"net": "net16", "track": 9, "drops": [[res, "M2", "center"], [tail, "M2", "right"]]},
+        {"net": "VSS", "track": 10, "drops": [[n_diode, "M2"], [NA0, "M2"], [NA1, "M2"], [NA2, "M2"], [NA3, "M2"], [NA4, "M2"], [n_buf, "M2"], [res, "M2"], [tail, "M2"]]},
+        {"net": "VDD_1V8", "track": 11, "drops": [[p_ref, "M2"], [PA0, "M2"], [PA1, "M2"], [PA2, "M2"], [PA3, "M2"], [PA4, "M2"], [p_buf, "M2"]]},
+        {"net": "VSS", "track": 10, "drops": [[n_diode, "M2"], [NA0, "M2"], [NA1, "M2"], [NA2, "M2"], [NA3, "M2"], [NA4, "M2"], [n_buf, "M2"], [res, "M2"], [tail, "M2"]]},
+        {"net": "VDD_1V8", "track": 11, "drops": [[p_ref, "M2"], [PA0, "M2"], [PA1, "M2"], [PA2, "M2"], [PA3, "M2"], [PA4, "M2"], [p_buf, "M2"]]},
     ]
