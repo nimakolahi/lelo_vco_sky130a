@@ -51,6 +51,12 @@ sweep:
 sweep_corners:
 	python3 sweep_corners.py
 
+## Post-layout tuning curve, from the extracted netlist.
+## Needs work/lpe/LELO_VCO_lpe.spi -- run `make lpe` in ../../work first.
+sweep_lay:
+	ngspice -b sweep_lay.spi 2>/dev/null | awk '/^RESULT/ && NF==3 {print $$2, $$3}' > vco_tuning_lay.dat
+	python3 plot_tuning_lay.py
+
 summary:
 	cicsim summary --output "README.md"
 

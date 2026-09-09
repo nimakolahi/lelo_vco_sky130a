@@ -3,7 +3,9 @@ simulations:
    tran:
     name: Transient analysis
     description: |
-      Check transient operation
+      Check transient operation.  "Sch" is the schematic netlist,
+      "Lay" the post-layout netlist with extracted parasitics
+      (work/lpe/LELO_VCO_lpe.spi, 134 parasitic caps).
     data:
       - name: Sch_typ
         src: results/tran_Sch_typical
@@ -13,4 +15,13 @@ simulations:
         method: minmax
       - name: Sch_3std
         src: results/tran_Sch_mc
+        method: 3std
+      - name: Lay_typ
+        src: results/tran_Lay_typical
+        method: typical
+      - name: Lay_etc
+        src: results/tran_Lay_etc
+        method: minmax
+      - name: Lay_3std
+        src: results/tran_Lay_mc
         method: 3std
