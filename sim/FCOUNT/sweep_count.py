@@ -11,6 +11,7 @@ Requires the compiled model + instance (run `make rtl` first, which the Makefile
 import os
 import re
 import subprocess
+import sys
 import numpy as np
 import matplotlib
 matplotlib.use("Agg")
@@ -18,10 +19,20 @@ import matplotlib.pyplot as plt
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 TGATE = 16e-6
+
+#- Which netlist the analog half comes from.  "Sch" is the schematic,
+#- "Lay" the extracted netlist with parasitics (needs `make lpe` in
+#- ../../work).  Outputs are kept apart so both can be plotted together.
+VIEW = (sys.argv[1] if len(sys.argv) > 1 else "Sch")
+if VIEW not in ("Sch", "Lay"):
+    sys.exit(f"view must be Sch or Lay, not {VIEW!r}")
+NETLIST = ("../../work/lpe/LELO_VCO_lpe.spi" if VIEW == "Lay"
+           else "../../work/xsch/LELO_VCO.spice")
+SUFFIX = "_lay" if VIEW == "Lay" else ""
 VIN_STEPS = [round(0.3 + 0.1 * i, 2) for i in range(16)]  # 0.30 .. 1.80
 
 DECK = """*VCO + fcount transfer sweep
-.include ../../work/xsch/LELO_VCO.spice
+.include {netlist}
 .lib "$PDK_ROOT/sky130A/libs.tech/ngspice/sky130.lib.spice" tt
 .temp 27
 .option TNOM=27 GMIN=1e-15 reltol=1e-3 method=gear
@@ -57,7 +68,7 @@ VLINK clk Vout dc 0
 
 
 def run(vin):
-    deck = DECK.format(vin=vin)
+    deck = DECK.format(vin=vin, netlist=NETLIST)
     path = os.path.join(HERE, f"_sweep_{vin}.spi")
     with open(path, "w") as f:
         f.write(deck)
@@ -82,7 +93,7 @@ for v in VIN_STEPS:
 vin = np.array(vin)
 code = np.array(code)
 
-with open(os.path.join(HERE, "fcount_transfer.dat"), "w") as f:
+with open(os.path.join(HERE, f"fcount_transfer{SUFFIX}.dat"), "w") as f:
     f.write(f"# gate window = {TGATE*1e6:.0f} us\n# Vin[V]  count\n")
     for v, c in zip(vin, code):
         f.write(f"{v:.3f}  {c}\n")
@@ -95,18 +106,18 @@ plt.style.use("seaborn-v0_8-whitegrid")
 fig, ax = plt.subplots(figsize=(7.5, 5))
 ax.step(vin, code, where="mid", color="#7c3aed", lw=1.2, alpha=0.5)
 ax.plot(vin, code, "o", color="#7c3aed", ms=7, mfc="white", mec="#7c3aed",
-        mew=1.8, label="counter code (sim)")
+        mew=1.8, label=f"counter code ({VIEW})")
 ax.axvspan(0.5, 1.3, color="#7c3aed", alpha=0.06,
            label=f"linear region ({slope:.0f} counts/V)")
 ax.set_xlabel("Control voltage  V$_{in}$  [V]", fontsize=12)
 ax.set_ylabel(f"Counter code  (over {TGATE*1e6:.0f} µs gate)", fontsize=12)
 ax.set_title("LELO_VCO + fcount: digital transfer characteristic\n"
-             "(typical, 27 °C, VDD = 1.8 V)", fontsize=13, fontweight="bold")
+             f"({VIEW}, typical, 27 °C, VDD = 1.8 V)", fontsize=13, fontweight="bold")
 ax.set_xlim(0.4, 1.85)
 ax.set_ylim(0, code.max() * 1.12)
 ax.legend(loc="upper left", fontsize=10, frameon=True)
 fig.tight_layout()
-png = os.path.join(HERE, "fcount_transfer.png")
+png = os.path.join(HERE, f"fcount_transfer{SUFFIX}.png")
 fig.savefig(png, dpi=150)
 print("Saved", png)
 print(f"sensitivity ~= {slope:.1f} counts/V  ({slope/(TGATE*1e6):.1f} counts/V per us... "

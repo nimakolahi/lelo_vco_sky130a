@@ -21,7 +21,12 @@ count: rtl
 
 ## Digital transfer curve: counter code vs Vin (ADC characteristic)
 sweep: rtl
-	python3 sweep_count.py
+	python3 sweep_count.py Sch
+
+## Same, but with the analog half taken from the extracted netlist.
+## Needs work/lpe/LELO_VCO_lpe.spi -- run `make lpe` in ../../work first.
+sweep_lay: rtl
+	python3 sweep_count.py Lay
 
 clean:
 	-rm -rf fcount.so fcount_obj_dir svinst.spi fcount_wave.dat __pycache__

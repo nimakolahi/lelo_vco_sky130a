@@ -36,8 +36,33 @@ result = f_out * T_gate      (VCO cycles in the window)
 ## Run
 
 ```bash
-make count
+make count       # single-point demo at Vin = 0.9 V
+make sweep       # transfer curve, analog half from the schematic
+make sweep_lay   # transfer curve, analog half from the extracted netlist
 ```
+
+`make sweep_lay` needs the parasitic netlist -- run `make lpe` in `../../work`
+first.  Both sweeps share `sweep_count.py`, which takes the view as its
+argument (`Sch` / `Lay`).
+
+## Schematic vs post-layout
+
+The counter code *is* the sensor output, so anything that slows the VCO shows
+up directly as a gain error.  With the extracted parasitics the ring runs
+about 13 % slower, and the transfer curve moves with it:
+
+![schematic vs post-layout](fcount_transfer_compare.png)
+
+|                        | schematic | post-layout |      |
+|------------------------|-----------|-------------|------|
+| sensitivity (0.5-1.3 V)| 1201 counts/V | 1072 counts/V | -10.8 % |
+| code @ Vin = 0.9 V     | 581       | 505         | -13.1 % |
+| full scale             | 1080      | 961         | -11.0 % |
+
+So a read-out calibrated on schematic numbers would report about 11 % high.
+The curve keeps its shape -- the linear region is still 0.5..1.3 V and the
+saturation knee is still near 1.4 V -- so this is gain, not a change in
+character, and it calibrates out.
 
 This (1) compiles the RTL to `fcount.so` via `ngspice vlnggen` (Verilator),
 (2) generates the SPICE instance with `tech/script/gensvinst`, (3) co-simulates
